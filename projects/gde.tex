@@ -1,0 +1,78 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{url,a4wide}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\setlength{\itemsep}{0pt}
+\pagestyle{empty}
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{document}
+
+\centerline{\LARGE\bf 800-204 Language and Computation 2011}\vspace{2ex}
+
+\centerline{\large\bf Project Part 2b: Grammar Development}\vspace{1ex}
+
+A context-free grammar is a set of rewriting rules, or productions, that models
+our intuitions about grammatical sentences.  Starting with the grammar
+in \url{http://teach.estive.net/204/project/english.fcfg},
+you will extend and test the grammar, and discuss your findings.
+Do your work in a team of 2-3 students,
+and submit your work at the end of your week 11 workshop.
+
+A grammar \emph{test suite} is a collection of sentences that can be used to
+check that a grammar only accepts grammatical sentences.  It contains a mixture of
+grammatical and ungrammatical sentences.  A problem exists in the grammar if it
+rejects a grammatical sentence, or if it accepts an ungrammatical sentence.
+Remember that a sentence does not have to be meaningful in order to be
+grammatical (i.e.\ syntactic well-formedness is not the same as semantic interpretability).
+Obtain the test code from \url{http://teach.estive.net/204/project/gde.py}. 
+
+\begin{enumerate}
+\item Create a test suite for the above grammar, in a file
+\url{sentences.txt}, containing at least 15 grammatical sentences, and at least
+15 ungrammatical sentences, one per line.  Use all lowercase, avoid
+punctuation, and separate each word with whitespace.   Use words that
+are covered in the grammar.
+Mark ungrammatical sentences with an asterisk
+at the start of the line.  For example:
+
+\begin{verbatim}
+Jody claimed several cars disappeared
+*Jody walked several cars disappeared
+\end{verbatim}
+
+\item Extend the grammar to support another kind of verb subcategorization,
+such as \emph{put} (which requires an object noun phrase and a locative
+prepositional phrase), or \emph{give} (which requires two noun phrases, or a
+single noun phrase followed by a prepositional phrase headed by \emph{to}).
+Extend the test suite with at least 10 more grammatical sentences, and 10 more
+ungrammatical sentences.
+
+\item Now extend the grammar with several more productions, by adding support
+for another syntactic construction, such as
+questions, relative clauses, cleft sentences, adverbial clauses
+(see the \emph{SIL Glossary of Linguistic Terms} for explanations
+and examples).  Take special care with your use of features.
+Use the lectures, and the syntax handout
+as a further source of ideas about possible syntactic constructions.  Extend the
+test suite with at least 15 more grammatical sentences, and 15 more ungrammatical sentences.
+
+\end{enumerate}
+
+Discuss your work in a file \verb|report.txt| ($\sim 400$ words).
+Identify the team members in each file submitted.
+Your work will be assessed for correctness, clarity and insight. 
+The report must be original work of the group.
+Your submission is worth 10\% of the marks for this subject.
+
+\textbf{Note.}  The project has made simplifying assumptions
+relative to current approaches in ``grammar engineering'',
+which check that the expected parse trees and semantic
+representations were produced.
+
+Please email your report with subject line
+\textit{Language and Computation Project 2b}
+to Steven Bird at \texttt{sbird@unimelb.edu.au},
+copying all project group members.  All submissions
+will be acknowledged.
+
+\end{document}
