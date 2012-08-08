@@ -1,0 +1,18 @@
+S[SEM = <?subj(?vp)>] -> NP[SEM=?subj] VP[SEM=?vp]
+
+NP[SEM=<?det(?nom)> ] -> Det[SEM=?det]  Nom[SEM=?nom]
+NP[SEM=?np] -> PropN[SEM=?np]
+
+Nom[SEM=?nom] -> N[SEM=?nom]
+
+VP[SEM=<?v(?obj)>] -> TV[SEM=?v] NP[SEM=?obj]
+
+PropN[SEM=<\P.P(cyril)>] -> 'Cyril'
+
+Det[SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'every' | 'all'
+Det[SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'some' | 'a' | 'an'
+
+N[SEM=<\x.ankle(x)>] -> 'ankle'
+
+TV[SEM=<\X x.X(\y.bite(x,y))>] -> 'bites' | 'bite'
+
