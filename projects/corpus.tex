@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper]{article}
 \usepackage{url,a4wide}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex}
@@ -7,69 +7,75 @@
 \pagestyle{empty}
 \begin{document}
 
-\centerline{\LARGE\bf 800-204 Language and Computation 2011}\vspace{2ex}
+\centerline{\LARGE\bf UNIB20005: Language and Computation}\vspace{2ex}
 
-\centerline{\large\bf Project Part 2a: Simple Corpus Analysis}\vspace{1ex}
+\centerline{\large\bf Project 2: Corpus Analysis}\vspace{2ex}
 
-A corpus is a representative sample of language usage, which can be
-used to support large-scale empirical research.  The web is an
-excellent source of language data, and the NLTK ``webtext'' corpus
-includes a variety of examples (e.g.\ wine reviews, movie script,
-discussion forum, singles ads).
-In this project you
+A corpus is a representative sample of language use which can be
+used to support empirical research on language.  The web is an
+excellent source of language data.  In this project you
 will create your own modest-size corpus, in a genre of your choice,
 and carry out a
 series of small programming tasks to analyse its contents.
-As before, you should work in teams of 2-3 students from the same
-workshop class.
 
 Identify a genre and download a collection of HTML files containing
 10,000-50,000 words of text in this genre; explain your choice of
-data and document the source of the data in the README file.
+data and document the source of the data in your written report.
+
 Next, complete the following programming tasks:
 
 \begin{enumerate}
+\item \emph{Getting the data:}
+\begin{enumerate}
 \item Write a function \verb|clean| which processes the raw data and
 strips out the HTML, and saves the result in a single file \verb|corpus.txt|.
+Briefly discuss any issues you encountered in your report.
 \item Write a function \verb|tokens| which processes \verb|corpus.txt|
 using your own regular expression tokenizer; include comments to explain
 the purpose of each part of your regular expression (cf \S 3.7 of the textbook).
 The function should return a list of tokens.
+\end{enumerate}
+\item \emph{Basic processing:}
+\begin{enumerate}
 \item Write a function \verb|lexical_diversity| which calculates the ratio
 of word types to word tokens, and returns a floating-point number.  Take care
 to normalize the tokens.
 \item Write a function \verb|distinctive| which uses information about word
 length and/or frequency and/or any other properties you like, to identify the
 words that are most characteristic of this genre.  The function should return a
-list of words.
+list of words.  Note 10 characteristic words in the report, and discuss.
+\end{enumerate}
+\item \emph{Advanced processing:}
+\begin{enumerate}
 \item Write a function \verb|collocations| which reports pairs of words that are
-found adjacent to one another more likely than one would expect based
-solely on word frequency.  The function should return a list of pairs of words.
-\item Write a function \verb|collocations2| which
-filters out collocations involving closed-class words, with the help of
-NLTK's part-of-speech tagger \verb|pos_tag|.
+found adjacent to one another more often than one would expect based
+solely on word frequency.
+The function should return a list of pairs of words.
+Select some characteristic collocations and discuss them in your written report.
 \item Write a function \verb|average_polysemy| to calculate the average polysemy
 of the nouns in your corpus, where the polysemy of a noun is taken to be the number of WordNet
-synsets it has.  Note the 10 most polysemous words in the README file.
-\item Implement any other corpus processing task of your choice, and explain
-it in the README file.
+synsets it has.  Note the 10 most polysemous words in your report, and discuss.
+\end{enumerate}
+\item Implement any other corpus processing task of your choice, and discuss
+it in the report, be sure to cover motivation and findings (100-200 words).
+(This task should have similar complexity to the last two tasks.)
 \end{enumerate}
 
-Add comments to your code and the README file to explain any aspects of your
-program which are not immediately obvious to the reader.  Please n't use NLTK
-functionality except when explicitly told to do so.
+Add comments to your code to explain any aspects of your
+program which are not immediately obvious to the reader.
+Discuss any other insights you have based on this work
+in your written report.
 
-Identify the team members in each file submitted.
 Your work will be assessed for correctness and clarity.
-The project must be original work of the group.
+The project must be original work.  The report should be about 400 words long.
 Your submission is worth 10\% of the total marks for this subject.
 
-Submit a zipfile consisting of a Python module \verb|corpus.py|,
-the HTML files, \verb|corpus.txt|, and a README file, at the end of your week
-9 workshop. Please email your submission with subject line
-\textit{Language and Computation Project 2a}
-to Steven Bird at \texttt{sbird@unimelb.edu.au},
-copying all project group members.  All submissions
-will be acknowledged.
+Please submit three files \verb|corpus.py|, \verb|corpus.txt|, and \verb|report.pdf|
+as email attachments, and email them to \texttt{sbird@unimelb.edu.au},
+using the subject line \verb|L&C Project 2|.
+All submissions will be acknowledged.  If you do not receive an acknowledgement by
+the end of Monday 17 September, please resend.
+
+Submit your work by the end of week 8 (10pm on Friday 14 September).
 
 \end{document}
