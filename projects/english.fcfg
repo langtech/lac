@@ -1,0 +1,33 @@
+% start S
+
+S -> NP[NUM=?n] VP[NUM=?n]
+
+NP[NUM=?n] -> PropN[NUM=?n]
+NP[NUM=?n] -> Det[NUM=?n] N[NUM=?n]
+NP[NUM=pl] -> N[NUM=pl]
+
+VP[NUM=?n] -> V[SUBCAT=intrans, NUM=?n]
+VP[NUM=?n] -> V[SUBCAT=trans, NUM=?n] NP
+VP[NUM=?n] -> V[SUBCAT=clause, NUM=?n] S
+
+Det[NUM=sg] -> 'a' | 'this' | 'every'
+Det[NUM=pl] -> 'these' | 'all' | 'several' | 'some'
+Det -> 'the'
+
+PropN[NUM=sg]-> 'Kim' | 'Jody'
+
+N[NUM=sg] -> 'dog' | 'girl' | 'car' | 'child'
+N[NUM=pl] -> 'dogs' | 'girls' | 'cars' | 'children'
+
+V[SUBCAT=intrans, NUM=sg] -> 'disappears' | 'walks'
+V[SUBCAT=trans, NUM=sg] -> 'sees' | 'likes'
+V[SUBCAT=clause, NUM=sg] -> 'says' | 'claims'
+
+V[SUBCAT=intrans, NUM=pl] -> 'disappear' | 'walk'
+V[SUBCAT=trans, NUM=pl] -> 'see' | 'like'
+V[SUBCAT=clause, NUM=pl] -> 'say' | 'claim'
+
+V[SUBCAT=intrans, NUM=?n] -> 'disappeared' | 'walked'
+V[SUBCAT=trans, NUM=?n] -> 'saw' | 'liked'
+V[SUBCAT=clause, NUM=?n] -> 'said' | 'claimed'
+
