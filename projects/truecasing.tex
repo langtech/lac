@@ -1,0 +1,74 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{url,a4wide}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\setlength{\itemsep}{0pt}
+\pagestyle{empty}
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{document}
+
+\centerline{\LARGE\bf UNIB20005: Language and Computation}\vspace{2ex}
+
+\centerline{\large\bf Project 1: Truecasing Text}\vspace{2ex}
+\vfil
+
+Some text and speech input applications are able to guess the correct casing of text.
+
+Your task is to write a program to simulate this behaviour. For example, it will take
+the input:
+\begin{blockquote}
+we collect and preserve the abc radio and television recordings that have documented the cultural life of australians since the first radio broadcast in 1932.
+\end{blockquote}
+
+And produce the following output:
+
+\begin{blockquote}
+We collect and preserve the ABC Radio and Television recordings that have documented the cultural life of Australians since the first Radio broadcast in 1932.
+\end{blockquote}
+
+You are to implement this behaviour using a function \texttt{truecase(s)} which takes a string \texttt{s} as its argument, and which returns a string.
+
+Define another function \texttt{evaluate(s)} to evaluate your truecase function.
+The evaluate function should take a string \texttt{s} as its argument, lowercase it (to discard case distinctions),
+then guess the correct casing, then compare the input and output versions. It should return the percentage of
+words that were correctly cased, as a floating point number.
+
+For example, if our \texttt{truecase()} function produced the following output, you would report that 25/26 words were
+correctly cased, i.e.\ 96.15\%. In this case, your evaluate function would return \texttt{96.15}.
+Note that it is difficult to get a perfect score.
+
+We should be able to run your program on the command line, giving a filename as input, as follows:
+
+\begin{verbatim}
+\$ python 4291381.py mytext.txt
+73.56
+\end{verbatim}
+
+\begin{blockquote}
+We collect and preserve the ABC Radio and Television recordings that have documented the cultural life of Australians since the first radio broadcast in 1932.
+\end{blockquote}
+
+Please post any questions about the project on the LMS Discussion Forum.
+
+\section*{Submission}
+
+Your project is due at the end of week four (10pm, Friday 23 August). Please submit it by email to
+both \texttt{sbird@unimelb.edu.au} and texttt{nj@unimelb.edu.au}. Please use the subject line: \texttt{L&C Project 1}.
+Please name your file using your student id, for example: \texttt{2093183.py}. Use the following code as a
+template: \url{http://lp20.org/lac/projects/truecasing.py}
+
+The project must be original work.
+It is worth 10\% of the total marks for this subject.
+Your work will be assessed for correctness, clarity, and insight:
+
+\begin{description}
+\item[correctness (3 marks):] how well does your program perform on our test data?
+\item[clarity (3 marks):] how clearly is your code set out?
+\item[insight (3 marks):] how insightful is your discussion?
+\item[extra effort (1 mark):] a bonus mark for anything particularly original or impressive.
+\end{description}
+
+
+\end{document}
+
+
