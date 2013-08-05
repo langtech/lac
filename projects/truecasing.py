@@ -3,7 +3,10 @@
 # STUDENT-ID
 
 """
-<approximately 400 words of discussion about what your program does>
+<approximately 400 words of discussion about what your program does,
+and what problems you tacked and solved (or could not solve).
+Are there other sources of linguistic information that would have
+been useful? Briefly describe a possible application of this software.
 """
 
 def truecase(s):
