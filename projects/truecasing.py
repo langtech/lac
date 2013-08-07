@@ -9,6 +9,8 @@ Are there other sources of linguistic information that would have
 been useful? Briefly describe a possible application of this software.
 """
 
+# optionally import NLTK modules here (e.g. tokenizer or corpus)
+
 def truecase(s):
     # put your code here
 
