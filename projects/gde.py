@@ -21,6 +21,8 @@ accepted or rejected.  Empty output means there were
 no errors.
 """
 
+from __future__ import print_function
+
 from nltk import FeatureChartParser
 from nltk.data import load
 
@@ -59,32 +61,32 @@ def check_file(sentence_file, grammar_file, verbose=False):
             if expected and accepted:
                 correctly_accepted += 1
                 if verbose:
-                    print "Correctly accepted:", line,
+                    print("Correctly accepted:", line, end=' ')
             elif not expected and not accepted:
                 correctly_rejected += 1
                 if verbose:
-                    print "Correctly rejected:", line,
+                    print("Correctly rejected:", line, end=' ')
             elif expected and not accepted:
                 falsely_rejected += 1
-                print "Incorrectly rejected:", line,
+                print("Incorrectly rejected:", line, end=' ')
             elif not expected and accepted:
                 falsely_accepted += 1
-                print "Incorrectly accepted:", line,
+                print("Incorrectly accepted:", line, end=' ')
             if verbose:
-                print
+                print()
                
-    print "\nSUMMARY:"
-    print "correctly accepted: %d;\tincorrectly accepted: %d" % (
-           correctly_accepted, falsely_accepted)
-    print "correctly rejected: %d;\tincorrectly rejected: %d" % (
-           correctly_rejected, falsely_rejected)
-    print "total accepted: %d;\ttotal rejected: %d" % (
-           correctly_accepted + falsely_accepted, correctly_rejected + falsely_rejected)
-    print "total correct: %d;\ttotal incorrect: %d" % (
-           correctly_accepted + correctly_rejected, falsely_accepted + falsely_rejected)
-    print "Correctly accepted or rejected %d out of %d (%0.1f%%)" % (
+    print("\nSUMMARY:")
+    print("correctly accepted: %d;\tincorrectly accepted: %d" % (
+           correctly_accepted, falsely_accepted))
+    print("correctly rejected: %d;\tincorrectly rejected: %d" % (
+           correctly_rejected, falsely_rejected))
+    print("total accepted: %d;\ttotal rejected: %d" % (
+           correctly_accepted + falsely_accepted, correctly_rejected + falsely_rejected))
+    print("total correct: %d;\ttotal incorrect: %d" % (
+           correctly_accepted + correctly_rejected, falsely_accepted + falsely_rejected))
+    print("Correctly accepted or rejected %d out of %d (%0.1f%%)" % (
            correctly_accepted + correctly_rejected, len(sentences),
-           100 * float(correctly_accepted + correctly_rejected) / len(sentences))
+           100 * float(correctly_accepted + correctly_rejected) / len(sentences)))
    
 if __name__ == '__main__':
     from optparse import OptionParser
